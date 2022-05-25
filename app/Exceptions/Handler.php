@@ -6,6 +6,7 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Validation\ValidationException;
 use Illuminate\DataBase\Eloquent\ModelNotFoundException;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class Handler extends ExceptionHandler
 {
@@ -55,6 +56,11 @@ class Handler extends ExceptionHandler
             return response()->json([
                 "res" => false, 
                 "error" => "Error modelo no encontrado"], 400);
+        }
+        if($exception instanceof RouteNotFoundException){
+            return response()->json([
+                "res" => false, 
+                "error" => "No tiene Permisos para acceder a esta ruta"], 401);
         }
         return parent::render($request, $exception);
     }

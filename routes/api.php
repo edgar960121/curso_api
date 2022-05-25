@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\PacienteController;
+use App\Http\Controllers\AutenticarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,12 @@ Route::get('pacientes/{paciente}',[PacienteController::class, 'show']);
 Route::put('pacientes/{paciente}',[PacienteController::class, 'update']);
 //Ruta para eliminar
 Route::delete('pacientes/{paciente}',[PacienteController::class, 'destroy']);*/
-Route::apiResource('pacientes',PacienteController::class);
+
+Route::post('registro', [AutenticarController::class, 'registro']);
+Route::post('acceso', [AutenticarController::class, 'acceso']);
+
+//se prodrá acceder unicamente a los que tienen token
+Route::group(['middleware' => ['auth:sanctum']], function(){
+    Route::post('logout', [AutenticarController::class, 'cerrarSesion']);
+    Route::apiResource('pacientes',PacienteController::class);
+});

@@ -18,6 +18,8 @@ class PacienteController extends Controller
     public function index()
     {
         return PacienteResource::collection(Paciente::all());
+        //Paginado
+        //return PacienteResource::collection(Paciente::paginate(2));
     }
 
     /**

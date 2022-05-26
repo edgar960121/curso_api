@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\RegistroRequest;
@@ -36,7 +37,8 @@ class AutenticarController extends Controller
         $token = $user->createToken($request->email)->plainTextToken;
         return response()->json([
             'res'=>true,
-            'token' => $token
+            'token' => $token,
+            'usuario' => $user
         ], 200);
     }
 

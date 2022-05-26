@@ -1,0 +1,49 @@
+SUSCRÍBETE (Compartan el vídeo, dejen su like y un comentario bonito)
+https://www.youtube.com/channel/UC_TLn1T90jcpBplMv1T5jeg
+
+FANPAGE (Dejen su like)
+https://www.facebook.com/adersonjaraweb
+
+GRUPO DE FACEBOOK
+https://www.facebook.com/groups/356281585711829
+---------------------------------------------------
+
+
+
+USUARIO
+---------------------------------------------------
+{
+    "name" : "Maicol",
+    "email": "maicol@gmail.com",
+    "password": "123123"
+}
+
+
+PACIENTE
+---------------------------------------------------
+{
+    "nombres": "Luis Fernando",
+    "apellidos": "Rodriguez Esquivel",
+    "edad": "30",
+    "sexo": "Masculino",
+    "dni": "77661133",
+    "tipo_sangre": "A+",
+    "telefono": "977666111",
+    "correo": "luisf@gmail.com",
+    "direccion": "Jr. Ramón Castilla 339"
+}
+
+
+PACIENTE ACTUALIZADO
+---------------------------------------------------
+{
+    "nombres": "Mario Fernando",
+    "apellidos": "Rodriguez Estrada",
+    "edad": "50",
+    "sexo": "Masculino",
+    "dni": "77661133",
+    "tipo_sangre": "A-",
+    "telefono": "977666111",
+    "correo": "luisf@gmail.com",
+    "direccion": "Jr. Ramón Castilla 339"
+}

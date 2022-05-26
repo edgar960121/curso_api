@@ -62,6 +62,12 @@ class Handler extends ExceptionHandler
                 "res" => false, 
                 "error" => "No tiene Permisos para acceder a esta ruta"], 401);
         }
+        if ($request->expectsJson()) {
+            return response()->json([
+                "res" => false, 
+                "error" => "No tiene Permisos para acceder a esta ruta"], 401);
+        }
+    
         return parent::render($request, $exception);
     }
 }
